@@ -1,8 +1,8 @@
 name: "Postings"
 description: "Postings"
 
-url: "https://JensAdamczak.github.io/Postings"
-arch: "https://JensAdamczak.github.io/Postings/archive"
+url: "https://JensAdamczak.github.io"
+baseurl: "/Postings"
 
 markdown: rdiscount
 permalink: pretty
