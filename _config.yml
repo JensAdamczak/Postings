@@ -1,0 +1,12 @@
+name: "Postings"
+description: "Postings"
+
+url: "https://JensAdamczak.github.io/Postings"
+arch: "https://JensAdamczak.github.io/Postings/archive"
+
+markdown: rdiscount
+permalink: pretty
+
+pygments: true
+
+paginate: 1

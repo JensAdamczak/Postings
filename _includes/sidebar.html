@@ -1,0 +1,53 @@
+          </div><!-- /.blog-post -->
+          <!-- <ul class="pager">
+            <li><a href="#">Previous</a></li>
+            <li><a href="#">Next</a></li>
+          </ul>-->
+
+        </div><!-- /.blog-main -->
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>About</h4>
+            <p>We are living in a data-driven world. There is a multitude of freely available ways to obtain and analyze data to create something fun and useful. I'm focussing on things I find interesting and entertaining.</p>
+          </div>
+          <div class="sidebar-module">
+          <!-- <h4>Archives</h4>
+            <ol class="list-unstyled">
+            {% for post in site.posts %}
+          
+              {% unless post.next %}
+                <li>{{ post.date | date: '%B %Y' }}</li>
+              {% else %}
+                {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+                {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+                {% if year != nyear %}
+                <li>{{ post.date | date: '%B %Y' }}</li>
+                {% endif %}
+              {% endunless %}
+          
+              <!--<li>{{ post.date | date:"%b" }} <a href="{{ post.url }}">{{ post.title }}</a></li> -->
+            <!--{% endfor %}
+             </ol>-->
+
+            <h4>Recent posts</h4>
+            <ol class="list-unstyled">
+              {% for post in site.posts limit: 5 %}
+              <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+              {% endfor %}
+            </ol>
+            </div>
+            <div class="sidebar-module">
+            <h4>Navigation</h4>
+            <ol class="list-unstyled">
+               <li><a href="{{ site.url }}">Home</a></li>
+               <li><a href="{{ site.arch }}">Archive</a></li>
+            </ol>
+          </div>
+          <div class="sidebar-module">
+            <h4>Elsewhere</h4>
+            <ol class="list-unstyled">
+              <li><a href="https://github.com/JensAdamczak">GitHub</a></li>
+              <li><a href="https://twitter.com/JensAdamczak">Twitter</a></li>
+            </ol>
+          </div>
+        </div><!-- /.blog-sidebar -->
