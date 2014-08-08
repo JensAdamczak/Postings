@@ -41,8 +41,6 @@ from the files and treat them as missing data in the following. </p>
 <pre><code class="r">library(caret)
 train.data &lt;- read.csv(&quot;pml-training.csv&quot;, na.strings=c(&quot;NA&quot;, &quot;#DIV/0!&quot;),
                        row.names=1)
-testing &lt;- read.csv(&quot;pml-testing.csv&quot;, na.strings=c(&quot;NA&quot;, &quot;#DIV/0!&quot;),
-                    row.names=1)
 </code></pre>
 
 <p><br>
@@ -101,7 +99,6 @@ assigned to a certain task performed by the participants.</p>
 sel.cols &lt;- !(names(training) %in% cols.rm)
 training &lt;- subset(training, select=sel.cols) 
 validation &lt;- subset(validation, select=sel.cols) 
-testing &lt;- subset(testing, select=sel.cols)
 </code></pre>
 
 <p><br>
@@ -111,7 +108,6 @@ are basically the same for all cases and therefore don&#39;t have any predictive
 <pre><code class="r">nzv &lt;- nearZeroVar(training, saveMetric=TRUE)
 training.wz &lt;- training[, !nzv$zeroVar]
 validation.wz &lt;- validation[, !nzv$zeroVar]
-testing.wz &lt;- testing[, !nzv$zeroVar]
 </code></pre>
 
 <p><br>
@@ -134,7 +130,6 @@ dimensions of the remaining data set.</p>
 
 <pre><code class="r">training.left &lt;- training.wz[, na.ratio &lt; 0.96]
 validation.left &lt;- validation.wz[, na.ratio &lt; 0.96]
-testing.left &lt;- testing.wz[, na.ratio &lt; 0.96]
 sum(is.na(training.left))
 </code></pre>
 
