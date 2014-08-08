@@ -64,15 +64,18 @@ subject depend on the support they get at school?&rdquo; There are plenty of
 indicators for school support. A very simple one is the time the students spend
 in class.</p>
 
-<p>For each student we can find the number of class periods a week for a given subject
-and the average minutes per class period. According to the codebook they are
-stored in the columns ST69Q01&ndash;ST69Q03 for the length of the class periods and
-ST70Q01&ndash;ST70Q03 for the number of class periods. These values differ
-from country to country and even school to school. I am therefore going to
-split the dataset into a list of datasets, one for each country. We can then
-look at the first country (Albania) and see if there is a trend of performance with
-learning time. For this purpose I am calculating a linear model with R&#39;s lm
-function while restricting the analysis to one subject (math).</p>
+<p>For each student we can find the number of class periods a week for a given
+subject and the average minutes per class period. According to the codebook they
+are stored in the columns ST69Q01&ndash;ST69Q03 for the length of the class periods
+and ST70Q01&ndash;ST70Q03 for the number of class periods. These values differ from
+country to country and even school to school. I am therefore going to split the
+dataset into a list of datasets, one for each country. We can then look at the
+first country (Albania) and see if there is a trend of performance with learning
+time. For this purpose I am calculating a linear model with R&#39;s lm function
+while restricting the analysis to one subject (math). There are 5 different
+independent estimations of the student&#39;s math performance, PV1MATH&ndash;PV5MATH.
+They are all highly correlated and it is fine to just pick one of the values for
+the following analysis.</p>
 
 <pre><code class="r">cnt.list &lt;- split(student2012, student2012$CNT)
 
@@ -217,7 +220,7 @@ students. So for now we assume that the questionnaires were all filled in
 correctly and give a realistic representation of the actual times spend on
 studying math. </p>
 
-<p>It is reasonable to assume that the math performace depends on both, the time
+<p>It is reasonable to assume that the math performance depends on both, the time
 studied at school and the time they dedicate to homework. We are
 therefore going to construct a LOESS model that takes both times into account
 simultaneously.</p>
