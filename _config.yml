@@ -2,6 +2,7 @@ name: "Postings"
 description: "Postings"
 
 url: "https://JensAdamczak.github.io"
+#url: "localhost:4000"
 baseurl: "/Postings"
 
 markdown: rdiscount
